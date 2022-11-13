@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\experienceController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\halamanController;
 
@@ -32,6 +33,7 @@ Route::prefix('dashboard')->middleware('auth')->group(
     function (){
         Route::get('/',[halamanController::class,'index']);
         Route::resource('halaman',halamanController::class);
+        Route::resource('experience',experienceController::class);
     }
 );
 
